@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ciceromngr/get_proxy_nodejs#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.9",
+    "puppeteer": "^9.1.1",
     "request": "^2.88.2"
   }
 }
