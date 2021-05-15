@@ -1,0 +1,23 @@
+{
+  "name": "get_proxy_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciceromngr/get_proxy_nodejs.git"
+  },
+  "author": "Cicero Romao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciceromngr/get_proxy_nodejs/issues"
+  },
+  "homepage": "https://github.com/ciceromngr/get_proxy_nodejs#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.9",
+    "request": "^2.88.2"
+  }
+}
