@@ -12,28 +12,26 @@ console.log('[X] ------> INICIANDO <------ [X]')
 if(!err && res.statusCode === 200) {
 
     var $ = cheerio.load(html);
-    var result = {};
-
-    var ip = [];
-    var p = [];
+    var elite_proxy = [];
 
     $('#proxylisttable tbody tr').each(function() {
-        var ipAddress = $(this).find('td').eq(0).text().trim();
-        var porta = $(this).find('td').eq(1).text().trim();
-        ip.push(ipAddress);
-        p.push(porta);
+        var verificarEliteProxy = $(this).find('td').eq(4).text();
+        if(verificarEliteProxy === 'elite proxy') {
+            var ipAddress = $(this).find('td').eq(0).text().trim();
+            var portaIp = $(this).find('td').eq(1).text().trim();
+            elite_proxy.push({ip:ipAddress,porta:portaIp})
+        }
     })
     
-    // Os Resultados sao sequanciais o indice é igual ip[0] contem a porta p[0]
-    result.ipAddress = ip;
-    result.porta = p;
-
+    const randomProxy = elite_proxy[Math.floor(Math.random() * elite_proxy.length)]
+    
     (async () => {
         const browser = await puppeteer.launch(
             {
+                //Headless TRUE nao mostra o browser por padrao vem true
                 headless: false, 
                 //depois pegar as proxies com um varrendo as proxies do array de proxies e ir verificando se o status ok 200
-                args: ['--proxy-server=103.89.152.190:8080']
+                args: [`--proxy-server=${randomProxy.ip}:${randomProxy.porta}`]
             });
         const page = await browser.newPage();
         await page.goto('https://www.myip.com');
