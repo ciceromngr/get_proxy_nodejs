@@ -23,7 +23,7 @@ if(!err && res.statusCode === 200) {
         }
     })
     
-    const randomProxy = elite_proxy[Math.floor(Math.random() * elite_proxy.length)]
+    const randomProxy = elite_proxy[Math.floor(Math.random() * elite_proxy.length)];
     
     (async () => {
         const browser = await puppeteer.launch(
@@ -40,7 +40,7 @@ if(!err && res.statusCode === 200) {
     })();
 
     ///////////// Salvar as proxies em um arquivo JSON se quiser no caso
-    fs.writeFile('proxy.json', JSON.stringify(result, null, 4), function(err) {
+    fs.writeFile('proxy.json', JSON.stringify(elite_proxy, null, 4), function(err) {
         if(!err) {
             console.log('Arquivo JSON Escrito com sucesso');
         } else {
