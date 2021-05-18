@@ -1,3 +1,4 @@
+### README DETALHADO DO SCRIPT
 #
     require('request') precisa ser instaldo o pacote dele npm i request
     require('cheerio') precisa ser instaldo o pacote dele npm i cheerio  
